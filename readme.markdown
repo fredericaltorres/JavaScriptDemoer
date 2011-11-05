@@ -1,8 +1,6 @@
 JavaScriptDemoer
 ================
 
-TEST
-
 ***Overview***
 ===============
 
@@ -15,6 +13,7 @@ Each page displays
 - A JavaScript program that must  compile and may produce a console output.
     - JavaScriptDemoer comes with nodejs 0.5.10 windows version
 
+![](JavaScriptDemoer.jpg)
 
 ***How to write a pages***
 ===============
