@@ -13,10 +13,11 @@ Each page displays:
 - A JavaScript program that must  compile and may produce a console output.
     - JavaScriptDemoer comes with nodejs 0.5.10 windows version
 
-***How to write a pages***
+
+***How to write a page***
 ===============
 To create a demo, create text file with the extension .js.
-A demo file is a valid JavaScript file than contains comment with 
+A demo file is a valid JavaScript file than contains comments with 
 special meaning.
 
 - Syntax:
@@ -43,6 +44,37 @@ CSharp-Code
 //C#
 	var p = new { LastName = "Torres" };
     Console.WriteLine(p.LastName);
+```
+
+You can also include C# or JavaScript files, need to execute the 
+programs but that you do not want to show
+
+```javascript
+//code C#   has reflection vs JavaScript Is reflection
+/**
+- Let's output the properies of an instance
+**/
+//#include person.js
+//#include person.cs
+var p = { LastName : "Torres", FirstName : "Frederic" };
+
+for(var propertyName in p){
+
+    print(propertyName + " = " + p[propertyName]);
+}
+//C#
+public class Program {
+
+    static void Main(){
+
+        var p = new { LastName = "Torres", FirstName = "Frederic" };
+
+        foreach(var propertyInfo in p.GetType().GetProperties()){
+
+            Console.WriteLine(propertyInfo.Name + " = " + propertyInfo.GetValue(p, null).ToString());
+        }
+    }
+}
 ```
 
 ***Keyboards Shortcuts***
