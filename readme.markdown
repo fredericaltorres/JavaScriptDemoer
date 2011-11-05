@@ -13,6 +13,8 @@ Each page displays:
 - A JavaScript program that must  compile and may produce a console output.
     - JavaScriptDemoer comes with nodejs 0.5.10 windows version
 
+The end result is an HTML page which is rendered by the app. Therefore
+the markdown can also contain HTML and JavaScript code.
 
 ***How to write a page***
 ===============
@@ -95,7 +97,7 @@ public class Program {
 ***Credits and libraries***
 ===============
 
-JavaScriptDemoer use the following
+JavaScriptDemoer uses the following
 
 - nodejs 0.5.10 windows version
 - jQuery.1.6.4.js
