@@ -1,0 +1,13 @@
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\WinMarkDown.Form1.resources
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\WinMarkDown.frmWebBrowser.resources
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\WinMarkDown.Properties.Resources.resources
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\FredericTorres.Net.Src\MD\WinMarkDown\bin\Debug\WinMarkDown.exe
+C:\FredericTorres.Net.Src\MD\WinMarkDown\bin\Debug\WinMarkDown.pdb
+C:\FredericTorres.Net.Src\MD\WinMarkDown\bin\Debug\DynamicSugar.dll
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\WinMarkDown.exe
+C:\FredericTorres.Net.Src\MD\WinMarkDown\obj\x86\Debug\WinMarkDown.pdb
+C:\DVT\C#\JavaScriptDemoer\JavaScriptDemoer\obj\x86\Debug\WinMarkDown.exe
+C:\DVT\C#\JavaScriptDemoer\JavaScriptDemoer\obj\x86\Debug\WinMarkDown.pdb
