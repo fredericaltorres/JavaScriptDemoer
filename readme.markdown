@@ -16,8 +16,24 @@ Each page displays
     - JavaScriptDemoer comes with nodejs 0.5.10 windows version
 
 
-***how to write a page***
+***How to write a pages***
 ===============
+To create a demo, create text file with the extension .js.
+A demo file is a valid JavaScript file than contains comment with 
+special meaning.
+
+- Syntax:
+```javascript
+//code Slide-Title
+/**
+Markdown-Code
+**/
+JavaScript Code	
+//C#
+CSharp-Code
+```
+
+- Sample:
 
 ```javascript
 //code The Shortest Object Oriented Program In The World
