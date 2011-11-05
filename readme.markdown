@@ -22,6 +22,7 @@ A demo file is a valid JavaScript file than contains comment with
 special meaning.
 
 - Syntax:
+
 ```javascript
 //code Slide-Title
 /**
