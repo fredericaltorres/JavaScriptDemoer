@@ -4,16 +4,14 @@ JavaScriptDemoer
 ***Overview***
 ===============
 
-JavaScriptDemoer is a windows application to demo JavaScript and/or C# code live.
-Each page displays
+JavaScriptDemoer is a windows application to demo JavaScript and/or C# source code live.
+Each page displays:
 
 - a slide written with the MARKDOWN language
 - An optional C# program, that must compile and may produce a console output.
     - .NET 4.0 must be installed.
 - A JavaScript program that must  compile and may produce a console output.
     - JavaScriptDemoer comes with nodejs 0.5.10 windows version
-
-![](http://github.com/fredericaltorres/JavaScriptDemoer/blob/master/JavaScriptDemoer.jpg)
 
 ***How to write a pages***
 ===============
@@ -46,6 +44,21 @@ CSharp-Code
 	var p = new { LastName = "Torres" };
     Console.WriteLine(p.LastName);
 ```
+
+***Keyboards Shortcuts***
+===============
+
+- F12 Next Page
+- F11 Previous Page
+
+- CTRL+F12 Hide the program execution panel
+- CTRL+F11 Hide the slide panel
+
+- F7 Generate an HTML summary of the presentation
+- CTRL+F7 Generate presentation as an HTML file
+    - The file is created in the sub folder node
+
+
 
 ***Credits and libraries***
 ===============

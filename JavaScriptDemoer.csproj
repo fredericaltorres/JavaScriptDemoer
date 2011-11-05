@@ -129,27 +129,6 @@
     </None>
     <EmbeddedResource Include="Js.Lib\Demo.Lib.js" />
     <Content Include="Js.Lib\css.css" />
-    <Content Include="Node\jquery.mobile\images\ajax-loader.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Node\jquery.mobile\images\icons-18-black.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Node\jquery.mobile\images\icons-18-white.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Node\jquery.mobile\images\icons-36-black.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Node\jquery.mobile\images\icons-36-white.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Node\jquery.mobile\jquery.mobile-1.0rc1.min.css">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Node\jquery.mobile\jquery.mobile-1.0rc1.min.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Node\jQuery\jQuery.1.6.4.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
