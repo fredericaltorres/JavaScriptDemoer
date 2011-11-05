@@ -1,16 +1,35 @@
 JavaScriptDemoer
 ================
 
+TEST
+
 ***Overview***
 ===============
 
 JavaScriptDemoer is a windows application to demo JavaScript and/or C# code live.
 Each page displays
+
 - a slide written with the MARKDOWN language
 - An optional C# program, that must compile and may produce a console output.
     - .NET 4.0 must be installed.
 - A JavaScript program that must  compile and may produce a console output.
     - JavaScriptDemoer comes with nodejs 0.5.10 windows version
+
+
+***how to write a page***
+===============
+
+```javascript
+//code The Shortest Object Oriented Program In The World
+/**
+- Anonymous Type vs Object Literal
+**/
+	var p = { LastName : "Torres" };
+    print(p.LastName);
+//C#
+	var p = new { LastName = "Torres" };
+    Console.WriteLine(p.LastName);
+```
 
 ***Credits and libraries***
 ===============
