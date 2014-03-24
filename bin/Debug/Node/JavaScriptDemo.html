@@ -1,7 +1,78 @@
-<h2> Questions</h2>
-<p><p><H1>
-- ?
-</H1></p>
+
+<!doctype html>
+<head>
+    <meta charset="utf-8">    
+    <title>..\JavaScript For C# Developper.md</title>
+    <style>
+        .Red           { background-color:Red;                                                                          }
+        .SmallFontBold { font:12px/1.231 sans-serif;font-weight:bold;                                                   }        
+        body           { font:20px/1.231 sans-serif;                                                                    }
+        #TopBar        { font:12px/1.231 sans-serif;                                                                    }
+        hr             { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+    </style>
+<script src='SyntaxHighlighter/shCore.js' type='text/javascript'></script> 
+<script src='SyntaxHighlighter/shBrushJScript.js' type='text/javascript'></script> 
+<script src='SyntaxHighlighter/shBrushPython.js' type='text/javascript'></script>
+<script src='SyntaxHighlighter/shBrushRuby.js' type='text/javascript'></script> 
+<script src='SyntaxHighlighter/shBrushCSharp.js' type='text/javascript'></script> 
+<link href='SyntaxHighlighter/shCoreDefault.css' rel='stylesheet' type='text/css'/> 
+<script type='text/javascript'>SyntaxHighlighter.all();</script>
+
+<script src='jquery/jQuery.1.6.4.js' type='text/javascript'></script>
+<link rel='stylesheet' href='jquery/styles.css' />
+<!--
+<link rel='stylesheet' href='jquery.mobile/jquery.mobile-1.0rc1.min.css' />
+<script src='jquery.mobile/jquery.mobile-1.0rc1.min.js' type='text/javascript'></script>
+-->
+<script type='text/javascript'>
+
+    var _secondCounter = 60;
+    var _timerExecuteEverySecond = 10;
+    var _timerDuration = _timerExecuteEverySecond * 1000;
+    var timerHandle;
+
+    function OnSecond(){
+
+        var topBar      = $('#TopBar');        
+        _secondCounter -= _timerExecuteEverySecond;
+        topBar.html(_secondCounter);
+        timerHandle     = setTimeout(OnSecond,_timerDuration);        
+    }
+    $(document).ready(function () {
+
+       // timerHandle = setTimeout(OnSecond,_timerDuration);
+    });
+    function SelectNextLineOfCode() {
+
+        var selector = 'div.line number1 index0 alt2';
+        var selector = 'div.number1';
+        var line = $(selector);
+        alert(line.length);
+        line[1].className = 'line number1 index0 Red';
+        alert(line[1].className);
+        //line.css('background-color','red');        
+    }
+</script>
+</head>
+<body>
+<!--
+  <div id="TopBar" align="right">__</div>
+    <button OnClick="SelectNextLineOfCode();" id="NextLineOfCode"><< Previous Line</button>
+    <button id="NextLineOfCode">Next Line >></button>
+-->
+  <div id="container">
+
+<h2> Why Learn JavaScript in 2014?</h2>
+<p><p><center>
+<br/><br/><br/><br/><br/><br/></p>
+
+<h1>Why Learn JavaScript in 2014?</h1>
+
+<p><img src="../javascript-rhino.jpg" alt="" /></p>
+
+<h2>Frederic Torres</h2>
+
+<p></center></p>
 </p>
 
     </div>
