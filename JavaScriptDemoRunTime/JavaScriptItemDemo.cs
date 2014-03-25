@@ -238,7 +238,7 @@ namespace JavaScriptDemoer {
 
             if (!sourceCodeOnly) {
 
-                b.AppendFormat("<h2>{0}</h2>", ToHTML("{0}".format(this.Title))).AppendLine();
+                b.AppendFormat("<h2>{0}</h2><br/>", ToHTML("{0}".format(this.Title))).AppendLine();
                 b.AppendFormat("<p>{0}</p>", ToMarkDown(this.Comment)).AppendLine();
                 //b.AppendFormat("<hr>", ToHTML(this.Title)).AppendLine();
             }
