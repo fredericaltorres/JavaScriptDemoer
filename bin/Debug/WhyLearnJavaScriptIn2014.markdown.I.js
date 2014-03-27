@@ -12,7 +12,51 @@
 
 //code Why Learn JavaScript in 2014?
 /**
-Before we start: 
+About the Audience?
+
+<br/>  
+
+
+**/
+//code Why Learn JavaScript in 2014?
+/**
+About the Audience?
+
+<br/>  
+
+* Who never wrote a line of JavaScript?
+
+**/
+
+//code Why Learn JavaScript in 2014?
+/**
+About the Audience?
+
+<br/>  
+
+* Who never wrote a line of JavaScript?
+
+* Who hate JavaScript?
+
+**/
+
+//code Why Learn JavaScript in 2014?
+/**
+About the Audience?
+
+<br/>  
+
+* Who never wrote a line of JavaScript?
+
+* Who hate JavaScript?
+
+* Who do not understand JavaScript?
+
+**/
+
+//code Why Learn JavaScript in 2014?
+/**
+About the Audience?
 
 <br/>  
 
@@ -23,11 +67,10 @@ Before we start:
 * Who do not understand JavaScript?
 
 * Who ever read a book about JavaScript the language?
-
 **/
+
 //code Very short history - The bad part
 /**
-
 * ***JavaScript*** was created in 1995 by Bredan Eich as part of the Netscape Web Browser (*Legend says in 2 weeks*)
 
 <center>![](../BredanEich.jpg)</center>
@@ -38,7 +81,7 @@ Before we start:
     * Browser wars between Sun, Netscape, Microsoft
     * Designed by Committee (TC39, ECMAScript)
 <br/><br/>
-* ***The language contains a lot dangerous and stupid features, that cannot and will not be fixed***
+* ***The language contains a lot dangerous and stupid features, that were not fixed and will not be fixed***
 
 **/
 //code  Very short history - The good part
@@ -123,7 +166,7 @@ If you want to know more about the history of JavaScript
 
 * It is time you try the world of Dynamic Language like: 
 
-    * Python, Ruby, Lua or JavaScript<br/><br/> 
+    * Python, Ruby and JavaScript<br/><br/> 
 
 <center>
 ## By learning how to programming with such a languages you will become a better C# programmer
@@ -137,7 +180,9 @@ If you want to know more about the history of JavaScript
 /**
 * In 2008 Google released the Chrome browser
 
-* The Chrome browser use the JavaScript engine called ***V8***, which was the first one released to use **Just In Time Compilation**
+* The Chrome browser use the JavaScript engine called ***V8***
+    * The first JavaScript engine use **Just In Time Compilation**<br/><br/>
+
 
 * By 2014 all major browsers (FireFox, IE9, Safari) have some form of very fast JavaScript engine using JIT and other specific technologies.
 
@@ -227,33 +272,16 @@ PhoneGap is a mobile development framework that enables software programmers to 
 /**
 What it it ? 
 
+* ASM (Assembler Source Language)
+
 * Asm.js is a strict subset of JavaScript that can be used as a low-level, efficient target language for compilers.
 
 
 What does it mean? 
 <br/><br/>
 <center>
-***Asm.js transform a JavaScript runtime into a Virtual Machine like JVM or .NET Runtime.***
+***Asm.js transforms a JavaScript runtime into a Virtual Machine like JVM or .NET Runtime.***
 </center>
-
-**/
-
-//code ASM.js
-/**
-Asm.js 
-
-* Still experimental
-* Supported Mozilla (FireFox, Spider Monkey engine)
-
-What do I do with it?
-
-* Compiled C/C++ applications into ASM.js JavaScript. 
-* Principal target: Games written in C++, that can be run in a Browser
-* **Emscripten** is an LLVM-to-JavaScript compiler
-
-![alt text](http://i.imgur.com/1yoy1Fal.png "Title")
-
-http://asmjs.org/spec/latest
 
 **/
 
