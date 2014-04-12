@@ -62,51 +62,53 @@
 -->
   <div id="container">
 
-<h2> Inheritance</h2><br/>
+<h2> .NET Attribute vs Function Property</h2><br/>
 <p></p>
 <div class="SmallFontBold">C#</div>
 <pre id="CSharpSourceCode" class="brush:csharp;">
-public class Person {
-
-    public string LastName { get; set; }
-        
-    public Person(string lastName) {
-        this.LastName = lastName;
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+public class SuperMethodAttribute : System.Attribute {
+}        
+public class TheClass {    
+    [SuperMethod]
+    public void Run(){
     }
-    public Person() { } // Parameter l constructoress 
-}
-public class Employee : Person {
-
-    public string Company { get; set; }
-    
-    public Employee(string lastName, string company) { // &lt;= Base constructor
-        this.LastName = lastName;
-        this.Company = company;
+}       
+public class Program {    
+    public static string GetSuperMethodName(object o) {
+        foreach (var mi in o.GetType().GetMembers())
+            foreach (object attribute in mi.GetCustomAttributes(true))
+                if (attribute is SuperMethodAttribute)
+                    return mi.Name;
+        return null;
     }
     static void Main() {
-        var e1 = new Employee("Descartes", "Dualism");
-        var e2 = new Employee("Pascal"   , "Jansenism");
-        Console.WriteLine(e1.LastName); Console.WriteLine(e2.LastName);
+        var theClass = new TheClass();
+        Console.WriteLine("The SuperMethod is " + GetSuperMethodName(theClass));
     }
 }
+
 
 
 </pre>
 <div class="SmallFontBold">JavaScript</div>
 <pre id="JavaScriptSourceCode" class="brush:javascript;">
-function Person(lastName) {
+function TheClass(){
 
-    this.LastName = lastName;
-}
-function Employee(lastName, company) {
-    this.LastName = lastName;   
-    this.Company = company;
-}
-Employee.prototype = new Person(); // Inheritance
+    this.run = function() {
 
-var e1 = new Employee("Descartes", "Dualism");
-var e2 = new Employee("Pascal"   , "Jansenism");
-print(e1.LastName); print(e2.LastName);
+    }
+    this.run.SuperMethod = true;
+}
+function GetSuperMethodName(o){
+    for(var p in o)
+        if(typeof o[p] === "function") 
+            if(o[p].SuperMethod === true)   
+                return p;
+    return null;
+}
+var theClass = new TheClass();
+print("The SuperMethod is " + GetSuperMethodName(theClass));
 </pre>
 
     </div>

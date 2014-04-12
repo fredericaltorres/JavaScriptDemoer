@@ -61,17 +61,23 @@ Who ever read a book about JavaScript the language?
 //code Very short history - The bad part
 /**
 * ***JavaScript*** created in 1995 (almost 20 years ago)
+
     * Bredan Eich as part of the Netscape Web Browser (*Legend says in 2 weeks*)
 
 <center>![](../BredanEich.jpg)</center>
 
 * It was adopted by million of Web users ***very quickly*** and **because**:<br/>
+
     * It was created for beginner
     * Compatibilty reason
     * Browser wars between Sun, Netscape, Microsoft
     * Designed by Committee (TC39, ECMAScript)
-<br/><br/>
-* ***The language contains a some DANGEROUS and STUPID features, that were not fixed and will not be fixed***
+**/
+//code Very short history - The bad part
+/**
+* The language contains some ***dangerous*** and ***stupid*** features, that were not fixed and will not be fixed
+
+* It also contains some of most brillant features like ***First class function*** and ***Closure***
 
 **/
 //code  Very short history - The good part
@@ -94,6 +100,7 @@ Who ever read a book about JavaScript the language?
 
     * Developers think they know JavaScript without ever having read a book about it
         * That was my case until 2011
+
 **/
 
 //code  Very short history - The good part

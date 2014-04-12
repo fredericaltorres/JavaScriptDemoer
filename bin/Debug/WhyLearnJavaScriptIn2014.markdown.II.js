@@ -32,7 +32,7 @@ https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words
 /**
 <center>
 # Object Orientation
-<center>
+</center>
 **/
 
 //code The Shortest Object Oriented Program In The World
@@ -139,7 +139,7 @@ public class Person {
 /**
 <center>
 # Let's talk about Reflection
-<center>
+</center>
 **/
 
 //code C# has reflection, but JavaScript is reflection
@@ -199,48 +199,77 @@ public class Program {
 }
 //code Inheritance
 /**
-* Classical inheritance versus [prototypal inheritance](http://www.cs.rit.edu/~atk/JavaScript/manuals/jsobj)
 
-    * Objects inherit from other objects
+* <h2>Classical Inheritance: One class inherit from another class
+
+* [Prototypal Inheritance](http://www.cs.rit.edu/~atk/JavaScript/manuals/jsobj): One object inherit from another object</h2>
+
 **/
+
+//code Inheritance
+/**
+
+* Prototype: Base object
+* Prototype chaining
+
+![](../res.PrototypeInheritance.1.png)
+**/
+
+//code Inheritance
+/**
+
+* Employee1.LastName = "Descartes"; Employee2.LastName = "Pascal"; Employee3.LastName = "Ferrell";
+* All virtual
+
+![](../res.PrototypeInheritance.2.png)
+**/
+
 //code Inheritance
 /**
 **/
 function Person(lastName) {
 
     this.LastName = lastName;
+
+    this.run = function() {
+        print(this.LastName + " is running...");
+    }    
 }
 function Employee(lastName, company) {
+
     this.LastName = lastName;   
-    this.Company = company;
+    this.Company  = company;
 }
-Employee.prototype = new Person(); // Inheritance
+Employee.prototype = new Person(); // Define inheritance
 
 var e1 = new Employee("Descartes", "Dualism");
 var e2 = new Employee("Pascal"   , "Jansenism");
-print(e1.LastName); print(e2.LastName);
+e1.run(); e2.run();
 //C#
 public class Person {
 
     public string LastName { get; set; }
-        
+    
+    public Person() { } // Parameter less constructor
     public Person(string lastName) {
         this.LastName = lastName;
     }
-    public Person() { } // Parameter less constructor 
+    public void Run() {
+        Console.WriteLine(this.LastName + " is running...");
+    }
 }
 public class Employee : Person {
 
     public string Company { get; set; }
     
-    public Employee(string lastName, string company) { // <= Base constructor
+    public Employee(string lastName, string company) { 
         this.LastName = lastName;
-        this.Company = company;
+        this.Company  = company;
     }
     static void Main() {
         var e1 = new Employee("Descartes", "Dualism");
         var e2 = new Employee("Pascal"   , "Jansenism");
-        Console.WriteLine(e1.LastName); Console.WriteLine(e2.LastName);
+        e1.Run(); e2.Run();
     }
 }
 
@@ -250,24 +279,31 @@ public class Employee : Person {
 function Person(lastName) {
 
     this.LastName = lastName;
+
+    this.run = function() {
+        print(this.LastName + " is running...");
+    }    
 }
 function Employee(lastName, company) {
-     
+
     Person.call(this, lastName); // <= Base constructor
-    this.Company = company;
+    this.Company  = company;
 }
-Employee.prototype = new Person(); // Inheritance
+Employee.prototype = new Person(); // Define inheritance
 
 var e1 = new Employee("Descartes", "Dualism");
 var e2 = new Employee("Pascal"   , "Jansenism");
-print(e1.LastName); print(e2.LastName);
+e1.run(); e2.run();
 //C#
 public class Person {
 
     public string LastName { get; set; }
-        
+    
     public Person(string lastName) {
         this.LastName = lastName;
+    }
+    public void Run() {
+        Console.WriteLine(this.LastName + " is running...");
     }
 }
 public class Employee : Person {
@@ -275,22 +311,21 @@ public class Employee : Person {
     public string Company { get; set; }
     
     public Employee(string lastName, string company) : base(lastName) { // <= Base constructor
-        this.Company = company;
+        this.LastName = lastName;
+        this.Company  = company;
     }
     static void Main() {
         var e1 = new Employee("Descartes", "Dualism");
         var e2 = new Employee("Pascal"   , "Jansenism");
-        Console.WriteLine(e1.LastName); Console.WriteLine(e2.LastName);
+        e1.Run(); e2.Run();
     }
 }
 
-
 //code Private Property
 /**
-- Objects have properties and they are all public
+* Objects have properties and they are all public
+* But
 **/
-//#include person.js
-//#include person.cs
 function Employee(lastName, firstName, reservedParkingSpot) {
     var
         _reservedParkingSpot = reservedParkingSpot;
@@ -329,19 +364,63 @@ public class Employee  {
 /**
 - Based on the concept called: ***Closure***.
 
-    - Does not exist in Pascal, C, C++, Java and C#
+    - Does not exist in Pascal, C, C++
 
-        - Actually Closure is possible in C#<BR/><BR/>
+        - Closure is possible in C# 4.0, VB.net and Java 8 <BR/><BR/>
 
     - Not an easy concept to get at first
 
     - But once you get it, ***It will change the way you write code***
+
+<BR/><BR/>
 **/
+function outer(name) {
+
+    return function inner() {
+
+        return "Hello " + name;
+    }
+}
+
+print( outer("Fred")    );
+print( outer("Fred")()  );
+
+print( outer("Joe")()   );
+
+//code Private Property
+/**
+- Based on the concept called: ***Closure***.
+
+    - Does not exist in Pascal, C, C++
+
+        - Closure is possible in C# 4.0, VB.net and Java 8 <BR/><BR/>
+
+    - Not an easy concept to get at first
+
+    - But once you get it, ***It will change the way you write code***
+
+<BR/><BR/>
+**/
+var outer = function(name) {
+
+    return function() {
+
+        return "Hello " + name;
+    }
+}
+
+print( outer("Fred") );
+// 3 way to invoke a function
+print( outer("Fred")()      );  
+print( outer("Joe").call()  );
+print( outer("Joe").apply() );
+
+
 
 //code Let's Summarize
 /**
    
-- **{ }** means object literal, if there is no keyword functon, if, while, for...
+- **{ }** means object literal
 
 - **[ ]** with an object means reading/write the value of a property (object["PropertyName"])
 
@@ -350,53 +429,111 @@ public class Employee  {
         for(var propertyName in myObject)
                 print(propertyName +" " + myObject[propertyName]));
 
-- Function constructor
+- Function Constructor
 
-- Inheritance and virtual properties/methods (*We did not talk about it. It exists*)
+- Inheritance, prototype, prototype chaining
 
-- Nested function, Private property and Closure.
+- Virtual properties and methods
+
+- Nested function, private property and Closure
 **/
 
-//code Let's do interesting stuff
+//code Let's do other Amazing stuff with JavaScript
 /**
 
 - Static Member
-- Namespace
+
 - .NET Attribute
+
+- Namespace
 
 **/
 
 //code Static Member
 /**
-- First-class functions
+* First-class function
+
+    1. A function is an object
+    2. You can store a function in a variable
+    3. A function can have properties (including of type function)
+    4. You can pass the function as a parameter to another function
+    5. You can return a function from a function
 **/
-function Person(lastName, firstName){
+//code Static Member
+/**
+**/
+function Person(lastName, firstName) {
 
     this.LastName  = lastName;
     this.FirstName = firstName;
 }
-Person.create = function(lastName, firstName){ // (X) Static Member 
+Person.create = function(lastName, firstName) { // Static Member 
 
     return new Person(lastName, firstName);
 }
 var p = Person.create("Descartes", "Frederic");
 //C#
-public class Person{
+public class Person {
 
     public string LastName  { get; set; }
     public string FirstName { get; set; }
 
-    public Person(string lastName, string firstName){
+    public Person(string lastName, string firstName) {
         this.LastName  = lastName;
         this.FirstName = firstName;
     }
-    public static Person Create(string lastName, string firstName){
+    public static Person Create(string lastName, string firstName) {
         return new Person(lastName, firstName);
     }
-    static void Main(){
+    static void Main() {
         var p = Person.Create("Descartes", "Frederic");
     }
 }
+
+
+//code .NET Attribute vs Function Property
+/**
+**/
+function TheClass(){
+
+    this.run = function() {
+
+    }
+    this.run.SuperMethod = true;
+}
+function GetSuperMethodName(o){
+    for(var p in o)
+        if(typeof o[p] === "function") 
+            if(o[p].SuperMethod === true)   
+                return p;
+    return null;
+}
+var theClass = new TheClass();
+print("The SuperMethod is " + GetSuperMethodName(theClass));
+//C#
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+public class SuperMethodAttribute : System.Attribute {
+}        
+public class TheClass {    
+    [SuperMethod]
+    public void Run(){
+    }
+}       
+public class Program {    
+    public static string GetSuperMethodName(object o) {
+        foreach (var mi in o.GetType().GetMembers())
+            foreach (object attribute in mi.GetCustomAttributes(true))
+                if (attribute is SuperMethodAttribute)
+                    return mi.Name;
+        return null;
+    }
+    static void Main() {
+        var theClass = new TheClass();
+        Console.WriteLine("The SuperMethod is " + GetSuperMethodName(theClass));
+    }
+}
+
+
 //code Namespace
 /**
 - Namespace are so important in JavaScript that ...
@@ -436,48 +573,6 @@ public class Program{
 - Shortcut to access long nested are namespace are possible
 **/
 
-
-//code .NET Attribute vs Function Property
-/**
-**/
-function TheClass(){
-
-    this.run = function(){
-
-    }
-    this.run.SuperMethod = true;
-}
-function GetSuperMethodName(o){
-    for(var p in o)
-        if(typeof o[p] === "function") 
-            if(o[p].SuperMethod === true)   
-                return p;
-    return null;
-}
-var theClass = new TheClass();
-print("The SuperMethod is " + GetSuperMethodName(theClass));
-//C#
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-public class SuperMethodAttribute : System.Attribute {
-}        
-public class TheClass {    
-    [SuperMethod]
-    public void Run(){
-    }
-}       
-public class Program {    
-    public static string GetSuperMethodName(object o) {
-        foreach (var mi in o.GetType().GetMembers())
-            foreach (object attribute in mi.GetCustomAttributes(true))
-                if (attribute is SuperMethodAttribute)
-                    return mi.Name;
-        return null;
-    }
-    static void Main() {
-        var theClass = new TheClass();
-        Console.WriteLine("The SuperMethod is " + GetSuperMethodName(theClass));
-    }
-}
 
 
 //code Let's Summarize

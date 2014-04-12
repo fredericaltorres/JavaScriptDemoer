@@ -2,16 +2,19 @@ function print(s){
     console.log(s);
 }
 
-function Person(lastName) {
+function TheClass(){
 
-    this.LastName = lastName;
-}
-function Employee(lastName, company) {
-    this.LastName = lastName;   
-    this.Company = company;
-}
-Employee.prototype = new Person(); // Inheritance
+    this.run = function() {
 
-var e1 = new Employee("Descartes", "Dualism");
-var e2 = new Employee("Pascal"   , "Jansenism");
-print(e1.LastName); print(e2.LastName);
+    }
+    this.run.SuperMethod = true;
+}
+function GetSuperMethodName(o){
+    for(var p in o)
+        if(typeof o[p] === "function") 
+            if(o[p].SuperMethod === true)   
+                return p;
+    return null;
+}
+var theClass = new TheClass();
+print("The SuperMethod is " + GetSuperMethodName(theClass));

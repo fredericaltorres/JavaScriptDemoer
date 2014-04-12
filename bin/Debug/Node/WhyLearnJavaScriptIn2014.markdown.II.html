@@ -1,0 +1,1043 @@
+
+<!doctype html>
+<head>
+    <meta charset="utf-8">    
+    <title>..\JavaScript For C# Developper.md</title>
+    <style>
+        .Red           { background-color:Red;                                                                          }
+        .SmallFontBold { font:12px/1.231 sans-serif;font-weight:bold;                                                   }        
+        body           { font:20px/1.231 sans-serif;                                                                    }
+        #TopBar        { font:12px/1.231 sans-serif;                                                                    }
+        hr             { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+    </style>
+<script src='SyntaxHighlighter/shCore.js' type='text/javascript'></script> 
+<script src='SyntaxHighlighter/shBrushJScript.js' type='text/javascript'></script> 
+<script src='SyntaxHighlighter/shBrushPython.js' type='text/javascript'></script>
+<script src='SyntaxHighlighter/shBrushRuby.js' type='text/javascript'></script> 
+<script src='SyntaxHighlighter/shBrushCSharp.js' type='text/javascript'></script> 
+<link href='SyntaxHighlighter/shCoreDefault.css' rel='stylesheet' type='text/css'/> 
+<script type='text/javascript'>SyntaxHighlighter.all();</script>
+
+<script src='jquery/jQuery.1.6.4.js' type='text/javascript'></script>
+<link rel='stylesheet' href='jquery/styles.css' />
+<!--
+<link rel='stylesheet' href='jquery.mobile/jquery.mobile-1.0rc1.min.css' />
+<script src='jquery.mobile/jquery.mobile-1.0rc1.min.js' type='text/javascript'></script>
+-->
+<script type='text/javascript'>
+
+    var _secondCounter = 60;
+    var _timerExecuteEverySecond = 10;
+    var _timerDuration = _timerExecuteEverySecond * 1000;
+    var timerHandle;
+
+    function OnSecond(){
+
+        var topBar      = $('#TopBar');        
+        _secondCounter -= _timerExecuteEverySecond;
+        topBar.html(_secondCounter);
+        timerHandle     = setTimeout(OnSecond,_timerDuration);        
+    }
+    $(document).ready(function () {
+
+       // timerHandle = setTimeout(OnSecond,_timerDuration);
+    });
+    function SelectNextLineOfCode() {
+
+        var selector = 'div.line number1 index0 alt2';
+        var selector = 'div.number1';
+        var line = $(selector);
+        alert(line.length);
+        line[1].className = 'line number1 index0 Red';
+        alert(line[1].className);
+        //line.css('background-color','red');        
+    }
+</script>
+</head>
+<body>
+<!--
+  <div id="TopBar" align="right">__</div>
+    <button OnClick="SelectNextLineOfCode();" id="NextLineOfCode"><< Previous Line</button>
+    <button id="NextLineOfCode">Next Line >></button>
+-->
+  <div id="container">
+
+<h2></h2><br/>
+<p><p><center>
+<H1>JavaScript in 60 minutes for C# developers</p>
+
+<p><img src="../javascript-rhino.jpg" alt="" /></p>
+
+<p>Frederic Descartes 2014
+</H1>
+</center></p>
+</p>
+
+<h2> before we start, Keywords</h2><br/>
+<p><ul>
+<li><p>C#          </p>
+
+<ul>
+<li>79 Keywords <BR/><BR/></li>
+</ul></li>
+<li><p>JavaScript  </p>
+
+<ul>
+<li>26 Keywords - 3 (void, debugger and with are excluded)</li>
+</ul></li>
+</ul>
+
+<p><br/></p>
+
+<ul>
+<li>So little, So much...</li>
+</ul>
+
+<p>http://msdn.microsoft.com/en-us/library/x53a06bb(v=VS.100).aspx
+https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words</p>
+</p>
+
+<h2></h2><br/>
+<p><p><center></p>
+
+<h1>Object Orientation</h1>
+
+<p></center></p>
+</p>
+
+<h2> The Shortest Object Oriented Program In The World</h2><br/>
+<p><p>Is this make any sense to you?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+{ }
+
+</pre>
+
+<h2> The Shortest Object Oriented Program In The World</h2><br/>
+<p><p>Is this make any sense to you?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+    p = { }
+
+</pre>
+
+<h2> The Shortest Object Oriented Program In The World</h2><br/>
+<p><p>Is this make any sense to you?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+	var p = { }
+
+</pre>
+
+<h2> The Shortest Object Oriented Program In The World</h2><br/>
+<p><p>Semi colon are optional, but it is recommended to add them</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+	var p = { }; 
+
+</pre>
+
+<h2> Let's Create An Instance</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
+
+    public string LastName = "Descartes";
+
+    static void Main() {
+
+        var p = new Person();
+        Console.WriteLine(p.LastName);
+    }
+}
+    
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var p = { LastName : "Descartes" };
+print(p.LastName);
+
+</pre>
+
+<h2> Let's Create An Instance - Object Literal</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
+
+    public string LastName { get; set; }
+
+    public Person(string lastName) {
+        this.LastName = lastName;
+    }
+    public void Run() {
+        Console.WriteLine(this.LastName + " is running...");
+    }
+    static void Main() {
+        var p = new Person("Descartes");
+        p.Run(); 
+    }
+}
+ 
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var p = {
+
+	LastName :  "Descartes",
+	run      :  function() {
+                    print(this.LastName + " is running..."); 
+                }
+};
+p.run();
+</pre>
+
+<h2> Let's Create An Instance - Function Constructor</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
+
+    public string LastName  { get; set; }
+    
+    public Person(string lastName) {
+        this.LastName  = lastName;
+    }
+    public void Run(){
+        Console.WriteLine(this.LastName + " is running...");
+    }
+    static void Main(){
+        var p = new Person("Descartes");
+        p.Run();
+    }
+}
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function Person(lastName) {
+
+    this.LastName  = lastName;
+    
+    this.run = function() { // My prefered way to add method to an object
+        print(this.LastName + " is running...");
+    }
+}
+var p = new Person("Descartes");
+p.run();
+</pre>
+
+<h2></h2><br/>
+<p><p><center></p>
+
+<h1>Let's talk about Reflection</h1>
+
+<p></center></p>
+</p>
+
+<h2> C# has reflection, but JavaScript is reflection</h2><br/>
+<p></p>
+
+<h2> C# has reflection, but JavaScript is reflection</h2><br/>
+<p><ul>
+<li>Let's start with the JavaScript code</li>
+<li>2 syntaxes to access a property value in JavaScript  </li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Program {    
+
+    static void Main() {
+
+        var p = new Person("Descartes");
+        Console.WriteLine(p.LastName);
+
+        const BindingFlags GET_FLAGS = BindingFlags.Instance | BindingFlags.Public |
+                                       BindingFlags.GetProperty;
+        Console.WriteLine(p.GetType().InvokeMember("LastName", GET_FLAGS, null, p, null)); 
+    }
+}
+
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+    var p = { LastName : "Descartes" };
+    print(p.LastName);
+    print(p["LastName"]);    
+
+</pre>
+
+<h2> C# has reflection, but JavaScript is reflection</h2><br/>
+<p><ul>
+<li>Let's output the properies of an instance</li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Program {
+
+    static void Main() {
+
+        var p = new Person("Descartes", "Frederic");
+
+        foreach(var propertyInfo in p.GetType().GetProperties()) {
+
+            Console.WriteLine(propertyInfo.Name+" = "+propertyInfo.GetValue(p, null).ToString());
+        }
+    }
+}
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var p = { LastName : "Descartes", FirstName : "Frederic" };
+
+for(var propertyName in p) {
+
+    print(propertyName+" = "+p[propertyName]);
+}
+</pre>
+
+<h2> Inheritance</h2><br/>
+<p><ul>
+<li><p><h2>Classical Inheritance: One class inherit from another class</p></li>
+<li><p><a href="http://www.cs.rit.edu/~atk/JavaScript/manuals/jsobj">Prototypal Inheritance</a>: One object inherit from another object</h2></p></li>
+</ul>
+</p>
+
+<h2> Inheritance</h2><br/>
+<p><ul>
+<li>Prototype: Base object</li>
+<li>Prototype chaining</li>
+</ul>
+
+<p><img src="../res.PrototypeInheritance.1.png" alt="" /></p>
+</p>
+
+<h2> Inheritance</h2><br/>
+<p><ul>
+<li>Employee1.LastName = "Descartes"; Employee2.LastName = "Pascal"; Employee3.LastName = "Ferrell";</li>
+<li>All virtual</li>
+</ul>
+
+<p><img src="../res.PrototypeInheritance.2.png" alt="" /></p>
+</p>
+
+<h2> Inheritance</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
+
+    public string LastName { get; set; }
+    
+    public Person() { } // Parameter less constructor
+    public Person(string lastName) {
+        this.LastName = lastName;
+    }
+    public void Run() {
+        Console.WriteLine(this.LastName + " is running...");
+    }
+}
+public class Employee : Person {
+
+    public string Company { get; set; }
+    
+    public Employee(string lastName, string company) { 
+        this.LastName = lastName;
+        this.Company  = company;
+    }
+    static void Main() {
+        var e1 = new Employee("Descartes", "Dualism");
+        var e2 = new Employee("Pascal"   , "Jansenism");
+        e1.Run(); e2.Run();
+    }
+}
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function Person(lastName) {
+
+    this.LastName = lastName;
+
+    this.run = function() {
+        print(this.LastName + " is running...");
+    }    
+}
+function Employee(lastName, company) {
+
+    this.LastName = lastName;   
+    this.Company  = company;
+}
+Employee.prototype = new Person(); // Define inheritance
+
+var e1 = new Employee("Descartes", "Dualism");
+var e2 = new Employee("Pascal"   , "Jansenism");
+e1.run(); e2.run();
+</pre>
+
+<h2> Inheritance - Base Constructor</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
+
+    public string LastName { get; set; }
+    
+    public Person(string lastName) {
+        this.LastName = lastName;
+    }
+    public void Run() {
+        Console.WriteLine(this.LastName + " is running...");
+    }
+}
+public class Employee : Person {
+
+    public string Company { get; set; }
+    
+    public Employee(string lastName, string company) : base(lastName) { // &lt;= Base constructor
+        this.LastName = lastName;
+        this.Company  = company;
+    }
+    static void Main() {
+        var e1 = new Employee("Descartes", "Dualism");
+        var e2 = new Employee("Pascal"   , "Jansenism");
+        e1.Run(); e2.Run();
+    }
+}
+
+
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function Person(lastName) {
+
+    this.LastName = lastName;
+
+    this.run = function() {
+        print(this.LastName + " is running...");
+    }    
+}
+function Employee(lastName, company) {
+
+    Person.call(this, lastName); // <= Base constructor
+    this.Company  = company;
+}
+Employee.prototype = new Person(); // Define inheritance
+
+var e1 = new Employee("Descartes", "Dualism");
+var e2 = new Employee("Pascal"   , "Jansenism");
+e1.run(); e2.run();
+</pre>
+
+<h2> Private Property</h2><br/>
+<p><ul>
+<li>Objects have properties and they are all public</li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Employee  {
+
+    public string LastName             { get; set; }
+    public string FirstName            { get; set; }
+    private bool  _reservedParkingSpot { get; set; }
+
+    public Employee(string lastName, string firstName, bool reservedParkingSpot){
+        this.LastName             = lastName;
+        this.FirstName            = firstName;
+        this._reservedParkingSpot = reservedParkingSpot;
+    }
+    public void Run(){
+    
+        Console.WriteLine(this.LastName + " reservedParkingSpot:" + _reservedParkingSpot);
+    }
+    static void Main(){
+        var e = new Employee("Descartes", "Frederic", true);
+        e.Run();
+    }
+}
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function Employee(lastName, firstName, reservedParkingSpot) {
+    var
+        _reservedParkingSpot = reservedParkingSpot;
+
+    this.LastName  = lastName;
+    this.FirstName = firstName;
+
+    this.run = function() {
+        print(this.LastName + " reservedParkingSpot:" + _reservedParkingSpot);
+    }
+}
+var e = new Employee("Descartes", "Frederic", true);
+e.run();
+</pre>
+
+<h2> Private Property</h2><br/>
+<p><ul>
+<li><p>Based on the concept called: <strong><em>Closure</em></strong>.</p>
+
+<ul>
+<li><p>Does not exist in Pascal, C, C++, Java (may be)</p>
+
+<ul>
+<li>Closure is possible in C# 4.0<BR/><BR/></li>
+</ul></li>
+<li><p>Not an easy concept to get at first</p></li>
+<li><p>But once you get it, <strong><em>It will change the way you write code</em></strong></p></li>
+</ul></li>
+</ul>
+</p>
+
+<h2> Let's Summarize</h2><br/>
+<p><ul>
+<li><p><strong>{ }</strong> means object literal</p></li>
+<li><p><strong>[ ]</strong> with an object means reading/write the value of a property (object["PropertyName"])</p></li>
+<li><p>Keyword <strong>for</strong> and operator <strong>in</strong></p>
+
+<pre><code>for(var propertyName in myObject)
+        print(propertyName +" " + myObject[propertyName]));
+</code></pre></li>
+<li><p>Function Constructor</p></li>
+<li><p>Inheritance and virtual properties/methods (<em>We did not talk about it. It exists</em>)</p></li>
+<li><p>Nested function, private property and Closure</p></li>
+</ul>
+</p>
+
+<h2> Let's do interesting stuff</h2><br/>
+<p><ul>
+<li>Static Member</li>
+<li>Namespace</li>
+<li>.NET Attribute</li>
+</ul>
+</p>
+
+<h2> Static Member</h2><br/>
+<p><ul>
+<li><p>First-class functions</p>
+
+<ul>
+<li>A function is an object</li>
+<li>A function can have properties and has a link back to its constructor method</li>
+<li>You can store the function in a variable</li>
+<li>You can pass the function as a parameter to another function</li>
+<li>You can return a function from a function</li>
+</ul></li>
+</ul>
+</p>
+
+<h2> Static Member</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
+
+    public string LastName  { get; set; }
+    public string FirstName { get; set; }
+
+    public Person(string lastName, string firstName) {
+        this.LastName  = lastName;
+        this.FirstName = firstName;
+    }
+    public static Person Create(string lastName, string firstName) {
+        return new Person(lastName, firstName);
+    }
+    static void Main() {
+        var p = Person.Create("Descartes", "Frederic");
+    }
+}
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function Person(lastName, firstName) {
+
+    this.LastName  = lastName;
+    this.FirstName = firstName;
+}
+Person.create = function(lastName, firstName){ // (X) Static Member 
+
+    return new Person(lastName, firstName);
+}
+var p = Person.create("Descartes", "Frederic");
+</pre>
+
+<h2> Namespace</h2><br/>
+<p><ul>
+<li>Namespace are so important in JavaScript that ...</li>
+<li>To avoid conflict between classes and methods in web application loading multiple libraries</li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+
+namespace MyLibrary {
+    public class Person{
+        public string LastName  { get; set; }
+        public string FirstName { get; set; }
+
+        public Person(string lastName, string firstName){
+            this.LastName  = lastName;
+            this.FirstName = firstName;
+        }
+    }
+}
+public class Program{
+    static void Main(){
+        var p = new MyLibrary.Person("Descartes", "Frederic");
+    }
+}
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var MyLibrary = {
+    Person : function (lastName, firstName){
+        this.LastName  = lastName;
+        this.FirstName = firstName;
+    }
+}
+var p = new MyLibrary.Person("Descartes", "Frederic");
+</pre>
+
+<h2> Namespace</h2><br/>
+<p><ul>
+<li><p>Nested namespaces are possible</p></li>
+<li><p>Building one namespace from different files  is possible</p></li>
+<li><p>Shortcut to access long nested are namespace are possible</p></li>
+</ul>
+</p>
+
+<h2> .NET Attribute vs Function Property</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+public class SuperMethodAttribute : System.Attribute {
+}        
+public class TheClass {    
+    [SuperMethod]
+    public void Run(){
+    }
+}       
+public class Program {    
+    public static string GetSuperMethodName(object o) {
+        foreach (var mi in o.GetType().GetMembers())
+            foreach (object attribute in mi.GetCustomAttributes(true))
+                if (attribute is SuperMethodAttribute)
+                    return mi.Name;
+        return null;
+    }
+    static void Main() {
+        var theClass = new TheClass();
+        Console.WriteLine("The SuperMethod is " + GetSuperMethodName(theClass));
+    }
+}
+
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function TheClass(){
+
+    this.run = function(){
+
+    }
+    this.run.SuperMethod = true;
+}
+function GetSuperMethodName(o){
+    for(var p in o)
+        if(typeof o[p] === "function") 
+            if(o[p].SuperMethod === true)   
+                return p;
+    return null;
+}
+var theClass = new TheClass();
+print("The SuperMethod is " + GetSuperMethodName(theClass));
+</pre>
+
+<h2> Let's Summarize</h2><br/>
+<p><ul>
+<li><p>With all we learned so far, we were able to create the concepts of</p>
+
+<ul>
+<li>Static member</li>
+<li>Namespace</li>
+<li>.NET Attributes </li>
+<li>Enum Type with Object Literal (Which we did not see)
+<BR /><BR /></li>
+</ul></li>
+<li><p>JavaScript as language feature also support</p>
+
+<ul>
+<li><p>Optional Parameters</p></li>
+<li><p>Extension Methods</p></li>
+</ul></li>
+<li><p>What's the conclusion?    </p></li>
+</ul>
+</p>
+
+<h2> Data Structures</h2><br/>
+<p></p>
+
+<h2> JavaScript Object vs D...</h2><br/>
+<p><p>What is this ?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var trace = {
+
+    On:true
+}
+
+</pre>
+
+<h2> JavaScript Object vs Dictionary&lt;K,V&gt;</h2><br/>
+<p><p>What is this ?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var trace = {
+
+    On:true
+}
+
+</pre>
+
+<h2> JavaScript Object vs Dictionary&lt;K,V&gt;</h2><br/>
+<p><p></p>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+var trace = new Dictionary&lt;string,object&gt;();
+
+trace["Debug"]     = true;
+trace["Trace"]     = "warning";
+trace["TraceSize"] = 1000;
+
+foreach(var e in trace){
+    Console.WriteLine(e.Key + " = " + e.Value.ToString());
+}
+
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var trace = { };
+
+trace["Debug"]  = true;
+trace["Trace"]  = "warning";
+trace.TraceSize = 1000;
+
+for(var key in trace){
+    print(key + " = " + trace[key]);
+}
+
+</pre>
+
+<h2> The Shortest Structured Program In The World</h2><br/>
+<p><p>Is this make any sense to you?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+[ ]
+
+</pre>
+
+<h2> The Shortest Structured Program In The World</h2><br/>
+<p><p>Is this make any sense to you?</p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var a = [ ];
+
+</pre>
+
+<h2> The Shortest Structured Program In The World</h2><br/>
+<p><ul>
+<li>Array literal syntax</li>
+</ul>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var a = [ 1, 2, 3 ];
+
+</pre>
+
+<h2> JavaScript Array</h2><br/>
+<p><ul>
+<li>A JavaScript Array is not a C# array</li>
+<li>You may think that a JavaScript Array is hybrid between array and list</li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+var a = new List&lt;object&gt;();
+ 
+var b = new List&lt;int&gt;() { 1, 2, 3 };
+
+var c = new List&lt;string&gt;() { "a", "b", "c" };
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var a = [ ];
+
+var b = [ 1, 2, 3 ];
+
+var c = [ "a", "b", "c" ];
+
+</pre>
+
+<h2> What is a JavaScript Array? No Really!</h2><br/>
+<p><ul>
+<li><strong><em>The truth about JavaScript's Array</em></strong></li>
+</ul>
+</p>
+
+<h2> What is a JavaScript Array? No Really!</h2><br/>
+<p><ul>
+<li><p><strong><em>The truth about JavaScript's Array</em></strong></p></li>
+<li><p>A JavaScript Array is a <strong><em>Dictionary</em></strong> <em>of a special kind</em></p></li>
+</ul>
+</p>
+
+<h2> What is a JavaScript Array? No Really!</h2><br/>
+<p><ul>
+<li><p><strong><em>The truth about JavaScript's Array</em></strong></p></li>
+<li><p>A JavaScript Array is an <strong><em>Object</em></strong> where the property name can only be integer values</p></li>
+<li><p>A JavaScript Array is a <strong><em>Dictionary</em></strong> where the keys can only be integer values</p></li>
+<li><p>The property length always return the max key </p></li>
+</ul>
+
+<p><img src="../JavaScriptObjectModel.png" alt="" /></p>
+</p>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+
+
+</pre>
+
+<h2> Iterating Through An Array</h2><br/>
+<p><ul>
+<li>The default way</li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+var a = new List&lt;string&gt;()  { "a", "b", "c" };
+
+for(var i=0; i &lt; a.Count; i++){
+ 
+    Console.WriteLine(a[i]);
+}
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var a = [ "a", "b", "c" ];
+ 
+for(var i=0; i < a.length; i++){
+ 
+    print(a[i]);
+}
+</pre>
+
+<h2> Iterating Through An Array</h2><br/>
+<p><ul>
+<li>With for</li>
+<li><strong><em>ATTENTION</em></strong></li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+var a = new List&lt;string&gt;()  { "a", "b", "c" };
+
+foreach(var i in a){
+ 
+    Console.WriteLine(i);
+}
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var a = [ "a", "b", "c" ];
+ 
+for(var i in a){
+    
+    print(a[i]);
+}
+</pre>
+
+<h2> Iterating Through An Array</h2><br/>
+<p><ul>
+<li>With forEach()</li>
+<li>With JavaScript 5 (ecmascript 5), the Array type has member function forEach()</li>
+<li>With JavaScript 3, include the library: <a href="http://augmentjs.com">http://augmentjs.com</a></li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+var a = new List&lt;string&gt;()  { "a", "b", "c" };
+
+a.ForEach(
+     v =&gt; { Console.WriteLine(v); } // Lambda Statment
+);
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var a = [ "a", "b", "c" ];
+
+a.forEach(
+    function(v){
+        print(v);
+    }
+);
+</pre>
+
+<h2> Data Structures</h2><br/>
+<p><p>JavaScript Array can be used as</p>
+
+<ul>
+<li>Array - Array&lt;T&gt;</li>
+<li>List  - List&lt;T&gt;</li>
+<li>Stack - Stack&lt;T&gt;</li>
+<li><p>Queue - Queue&lt;T&gt;</p></li>
+<li><p>Array methods:</p>
+
+<ul>
+<li><strong><em>concat, indexOf, join, pop, push, reverse, shift, slice, sort, splice, unshift, valueOf.</em></strong></li>
+</ul></li>
+</ul>
+
+<p>With <strong><em>Extension Methods</em></strong> we can create the C# methods that we are used to.</p>
+</p>
+
+<h2> Let's Summarize</h2><br/>
+<p><ul>
+<li><p>Data Structures</p>
+
+<ul>
+<li>Dictionary</li>
+<li>Array</li>
+<li>List</li>
+<li>Stack</li>
+<li>Queue</li>
+</ul></li>
+</ul>
+</p>
+
+<h2> Functional Programming</h2><br/>
+<p><ul>
+<li>if time allows...</li>
+</ul>
+</p>
+
+<h2> Lambda Expression vs Function</h2><br/>
+<p><ul>
+<li>filter(), forEach(), every(), map()</li>
+<li>ECMAScript 5th Edition or include http://augmentjs.com/</li>
+</ul>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+var numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+var evenNumbers = numbers.FindAll(i =&gt; i % 2 == 0); // Lambda Expression
+
+evenNumbers.ForEach(n =&gt; {  // Lambda Statment
+    Console.WriteLine(n); 
+});
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+
+var evenNumbers = numbers.filter(function(i) { return i % 2 == 0; });
+
+evenNumbers.forEach(function(n){
+    print(n);
+});
+
+</pre>
+
+<h2> LINQ, Lambda Expression And A List Of Custom Object</h2><br/>
+<p><p></p>
+</p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Program {    
+    static void Main(){
+        var annoyingPeopleInHighSchool = new List&lt;Person&gt;() {
+            new Person("Descartes", "Rene"        ),
+            new Person("Pascal"   , "Baise"       ),
+            new Person("Laplace"  , "Pierre-Simon")
+        };
+        var funnyPeopleInHighSchool = from p in annoyingPeopleInHighSchool
+            where p.LastName=="Laplace"
+            select p;
+        foreach(var p in funnyPeopleInHighSchool)
+            Console.WriteLine(p.LastName);
+    }
+}
+
+
+
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+var annoyingPeopleInHighSchool = [
+    new Person("Descartes", "Rene"        ),
+    new Person("Pascal"   , "Baise"       ),
+    new Person("Laplace"  , "Pierre-Simon")
+];
+var funnyPeopleInHighSchool = annoyingPeopleInHighSchool.filter(function(p) {
+    return p.LastName==="Laplace" ? p : undefined;
+});
+funnyPeopleInHighSchool.forEach(function(p){
+    print(p.LastName);
+});
+</pre>
+
+<h2> Conclusion</h2><br/>
+<p><ul>
+<li><p>JavaScript</p>
+
+<ul>
+<li><p>Is a simple programming language</p></li>
+<li><p>Deserved to be understood</p></li>
+<li><p>Once you understand it and follow best practices to work around the bad part.</p>
+
+<ul>
+<li>You may enjoy using it.<BR/><BR/></li>
+</ul></li>
+<li><p>And in 2011, <strong><em>JavaScript runs fast everywhere</em></strong>.</p></li>
+</ul></li>
+</ul>
+</p>
+
+<h2> Questions</h2><br/>
+<p><p><H1>
+- ?
+</H1></p>
+</p>
+
+    </div>
+</body>
+
+
