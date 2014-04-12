@@ -12,31 +12,23 @@
 
 //code Why Learn JavaScript in 2014?
 /**
-About the Audience?
+About the Audience? 
 
-<br/>  
+* One Important Question
+
+<br/>    
 
 
 **/
 //code Why Learn JavaScript in 2014?
 /**
 About the Audience?
-
-<br/>  
-
-* Who never wrote a line of JavaScript?
-
-**/
-
-//code Why Learn JavaScript in 2014?
-/**
-About the Audience?
-
-<br/>  
-
-* Who never wrote a line of JavaScript?
-
-* Who hate JavaScript?
+<br/>
+<center>
+<h1>Who hate JavaScript?</h1>
+</center>
+<br/>
+<center>![](../javascript_the_evil_parts_small.png)</center>
 
 **/
 
@@ -44,13 +36,12 @@ About the Audience?
 /**
 About the Audience?
 
-<br/>  
+<center>
+<br/>
+<center>
+<h1>Who hate JavaScript?
 
-* Who never wrote a line of JavaScript?
-
-* Who hate JavaScript?
-
-* Who do not understand JavaScript?
+Who do not understand JavaScript?
 
 **/
 
@@ -58,30 +49,29 @@ About the Audience?
 /**
 About the Audience?
 
-<br/>  
+<br/>
+<center>
+<h1>Who hate JavaScript?
 
-* Who never wrote a line of JavaScript?
+Who do not understand JavaScript?
 
-* Who hate JavaScript?
-
-* Who do not understand JavaScript?
-
-* Who ever read a book about JavaScript the language?
+Who ever read a book about JavaScript the language?
 **/
 
 //code Very short history - The bad part
 /**
-* ***JavaScript*** was created in 1995 by Bredan Eich as part of the Netscape Web Browser (*Legend says in 2 weeks*)
+* ***JavaScript*** created in 1995 (almost 20 years ago)
+    * Bredan Eich as part of the Netscape Web Browser (*Legend says in 2 weeks*)
 
 <center>![](../BredanEich.jpg)</center>
 
-* It was adopted by million of Web users very quickly and **because**:<br/><br/>
+* It was adopted by million of Web users ***very quickly*** and **because**:<br/>
     * It was created for beginner
     * Compatibilty reason
     * Browser wars between Sun, Netscape, Microsoft
     * Designed by Committee (TC39, ECMAScript)
 <br/><br/>
-* ***The language contains a lot dangerous and stupid features, that were not fixed and will not be fixed***
+* ***The language contains a some DANGEROUS and STUPID features, that were not fixed and will not be fixed***
 
 **/
 //code  Very short history - The good part
@@ -89,31 +79,31 @@ About the Audience?
 
 * ***But*** JavaScript is not as bad as it looks
 
-* JavaScript is also misundertsood
+* it is also ***misundertsood***
 
-    * It looks like Java or C#, it is closer to LISP
+    * It looks like Java or C#, but is closer to LISP
+    
+    <pre>
+        (defun factorial (N)
+            (if (= N 1)
+                1
+            (* N (factorial (- N 1)))))
+</pre>            
 
-    * Developers say they hate JavaScript, but what they really hate is the DOM
+    * Developers say they hate JavaScript, *but what they really hate is the DOM*
 
     * Developers think they know JavaScript without ever having read a book about it
+        * That was my case until 2011
 **/
 
 //code  Very short history - The good part
 /**
 
-* JavaScript is also misundertsood
-
-    * It looks like Java or C#, it is closer to LISP
-
-    * Developers say they hate JavaScript, but what they really hate is the DOM
-
-    * Developers think they know JavaScript without ever having read a book about it
-
 <br/><center>
 # JavaScript is a Dynamic,
 #Object-Oriented,
-# ***Functional***
-#Programming Language.
+# Functional
+#Programming Language
 </center> 
 **/
 
@@ -147,16 +137,6 @@ If you want to know more about the history of JavaScript
 
 * Since 2008 a lot of new tools and technologies have been created that use JavaScript
 
-    * Server side applications
-
-    * Mobile development
-
-    * Database
-
-    * New programming languages
-
-    * Portable Virtual Machine - Assembly language of the web.
-
 **/
 //code Why learn JavaScript 2014?
 /**
@@ -164,19 +144,32 @@ If you want to know more about the history of JavaScript
 
     * C, Pascal, C++, Java, C#, VB<br/><br/>
 
-* It is time you try the world of Dynamic Language like: 
+* Try the world of Dynamic Languages:
 
-    * Python, Ruby and JavaScript<br/><br/> 
+    * Python, Ruby and JavaScript<br/><br/>
 
 <center>
-## By learning how to programming with such a languages you will become a better C# programmer
+## By learning how to program with such languages 
+## you will become a better C# programmer
 </center>
 
 * Let's review what happens since 2008
 
 
 **/
-//code  2008 - V8
+//code In 2008
+/**
+* What happened in 2008 ?
+
+
+**/
+//code In 2008
+/**
+* In 2008, **V8** . . . 
+
+
+**/
+//code In 2008 - V8
 /**
 * In 2008 Google released the Chrome browser
 
@@ -184,7 +177,7 @@ If you want to know more about the history of JavaScript
     * The first JavaScript engine use **Just In Time Compilation**<br/><br/>
 
 
-* By 2014 all major browsers (FireFox, IE9, Safari) have some form of very fast JavaScript engine using JIT and other specific technologies.
+* By 2014 all major browsers (FireFox (Ion Monkey), IE9 (Chakra), Safari) have some form of very fast JavaScript engine using JIT and other specific technologies.
 
 **/
 //code 2010 - CoffeeScript
@@ -201,10 +194,10 @@ If you want to know more about the history of JavaScript
 
     * Dart
     * Google Web Toolkit (Java -> JavaScript)
-    * ClojureScript (Clojure language)
+    * ClojureScript
     
 **/
-//code 2011 - NodeJS
+//code 2010 - NodeJS
 /**    
 <center>
 ![](../300px-Node.js_logo.svg.png)
@@ -212,16 +205,16 @@ If you want to know more about the history of JavaScript
 
 * Node.js is a software platform for scalable server-side and networking applications.
 
-    * Written in C++ and same JavaScript source code can run on Linux, Windows, MacOS X.
-    * Use Google JavaScript engine V8 (extremely fast)
-        * Single-threaded
-        * Non-blocking I/O (Asynchrounous programming)<br/><br/>
+    * It use JavaScript
+        * Use Google JavaScript engine V8 (extremely fast)
+    * Avaiable on Linux, Windows, MacOS X.
+        * Non-blocking I/O (Asynchrounous programming), Single-threaded<br/><br/>
 
-* Ryan Dahl, release NodeJs 2010/2011
+* Ryan Dahl, released NodeJs 2010/2011
     
-* Extremely Successfull
+* Extremely successfull
 
-* Microsoft has invested on NodeJS for Windows and Azur
+* Microsoft has invested on NodeJS for Windows, Azur and Visual Studio
 
 **/
 //code 2012 - TypeScript
@@ -234,7 +227,7 @@ If you want to know more about the history of JavaScript
 
 * What is interresting with TypeScript is the way it add Types
     * Optional
-    * Ligth 
+    * Light
         * Not used at runtime
         * Only used at edit time
             * Catch error
@@ -244,19 +237,23 @@ If you want to know more about the history of JavaScript
 **/
 //code NoSQL Databases
 /**
-* MongoDB (use the Firefox JavaScript Engine)
+* ***MongoDB*** (use the Firefox JavaScript Engine, C++) <br/>
+![](../MongoDB.jpg)
 
-* RavenDB (use the JavaScript engine Jint v 0.9 and should used Jint v 2.0 (contributor))
+* ***RavenDB*** (use the JavaScript engine Jint v 0.9 C# and should used Jint v 2.0 (contributor))<br/>
+![](../ravendb.png)
 
-* Windows Azure Mobile Service: 
+* ***Azure Mobile Service***<br/>
+![](../MobileServices.jpg)
 
-    * Allow to customize the data getting in and out using JavaScript (I think they use NodeJS)
+    * Allow to customize the data getting in and out using JavaScript (NodeJS)
 
 **/
 //code HTML5 + Mobile + PhoneGap
 /**
+![](../PhoneGap.jpg) is a mobile development framework that enables software programmers to build applications for ***mobile devices*** using JavaScript, HTML5, and CSS3.
+<br/>
 
-PhoneGap is a mobile development framework that enables software programmers to build applications for ***mobile devices*** using JavaScript, HTML5, and CSS3.
 
 * PhoneGap Build http://phonegap.com
 
@@ -270,19 +267,19 @@ PhoneGap is a mobile development framework that enables software programmers to 
 **/
 //code ASM.js
 /**
-What it it ? 
+What is it ? <br/>
+![](../asm.js.jpg)
 
 * ASM (Assembler Source Language)
 
 * Asm.js is a strict subset of JavaScript that can be used as a low-level, efficient target language for compilers.
 
+    * Asm.js transforms a JavaScript runtime into a Virtual Machine like JVM or .NET Runtime <br/><br/>
 
-What does it mean? 
-<br/><br/>
-<center>
-***Asm.js transforms a JavaScript runtime into a Virtual Machine like JVM or .NET Runtime.***
-</center>
+* C++ source --> Compile to LLVM --> Translate to ASM.js --> Fast execution in FireFox
 
+* But why? To execute game written in C++ in the browser with minimal rewriting.
+ 
 **/
 
 //code The books to read

@@ -1,23 +1,13 @@
-//code .
+//code
 /**
-
 <center>
+<H1>JavaScript in 60 minutes for C# developers
 
-<BR><BR><BR>
+![](../javascript-rhino.jpg)
 
-<H1>JavaScript in 30 minutes for C# developers
-
-<BR /><BR /><BR />
-
-Part II
-
-<BR /><BR /><BR />
-
-Frederic Torres 2014
+Frederic Descartes 2014
 </H1>
-
 </center>
-
 **/
 
 
@@ -29,6 +19,10 @@ Frederic Torres 2014
 
 - JavaScript  
     - 26 Keywords - 3 (void, debugger and with are excluded)
+
+<br/>
+
+- So little, So much...
 
 http://msdn.microsoft.com/en-us/library/x53a06bb(v=VS.100).aspx
 https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words
@@ -68,13 +62,13 @@ Semi colon are optional, but it is recommended to add them
 //code Let's Create An Instance
 /**
 **/
-var p = { LastName : "Torres" };
+var p = { LastName : "Descartes" };
 print(p.LastName);
 
 //C#
 public class Person {
 
-    public string LastName = "Torres";
+    public string LastName = "Descartes";
 
     static void Main() {
 
@@ -88,7 +82,7 @@ public class Person {
 **/
 var p = {
 
-	LastName :  "Torres",
+	LastName :  "Descartes",
 	run      :  function() {
                     print(this.LastName + " is running..."); 
                 }
@@ -106,7 +100,7 @@ public class Person {
         Console.WriteLine(this.LastName + " is running...");
     }
     static void Main() {
-        var p = new Person("Torres");
+        var p = new Person("Descartes");
         p.Run(); 
     }
 }
@@ -122,7 +116,7 @@ function Person(lastName) {
         print(this.LastName + " is running...");
     }
 }
-var p = new Person("Torres");
+var p = new Person("Descartes");
 p.run();
 //C#
 public class Person {
@@ -136,7 +130,7 @@ public class Person {
         Console.WriteLine(this.LastName + " is running...");
     }
     static void Main(){
-        var p = new Person("Torres");
+        var p = new Person("Descartes");
         p.Run();
     }
 }
@@ -148,39 +142,43 @@ public class Person {
 <center>
 **/
 
-//code C# has reflection vs JavaScript Is reflection
+//code C# has reflection, but JavaScript is reflection
 /**
 **/
 
-//code C# has reflection vs JavaScript Is reflection
+//code C# has reflection, but JavaScript is reflection
 /**
 - Let's start with the JavaScript code
-- 2 syntaxes to access a property value in JavaScript
+- 2 syntaxes to access a property value in JavaScript  
 **/
-
-    var p = { LastName : "Torres" };
-
+//#include person.js
+//#include person2.cs
+    var p = { LastName : "Descartes" };
     print(p.LastName);
-
     print(p["LastName"]);    
 
 //C#
-var p = new { LastName = "Torres" };
+public class Program {    
 
-Console.WriteLine(p.LastName);
+    static void Main() {
 
-const BindingFlags GET_FLAGS = BindingFlags.Instance    | BindingFlags.Public  |  
-                               BindingFlags.GetProperty | BindingFlags.GetField;
+        var p = new Person("Descartes");
+        Console.WriteLine(p.LastName);
 
-Console.WriteLine(p.GetType().InvokeMember("LastName", GET_FLAGS, null, p, null));
+        const BindingFlags GET_FLAGS = BindingFlags.Instance | BindingFlags.Public |
+                                       BindingFlags.GetProperty;
+        Console.WriteLine(p.GetType().InvokeMember("LastName", GET_FLAGS, null, p, null)); 
+    }
+}
 
-//code C#   has reflection vs JavaScript Is reflection
+
+//code C# has reflection, but JavaScript is reflection
 /**
 - Let's output the properies of an instance
 **/
 //#include person.js
 //#include person.cs
-var p = { LastName : "Torres", FirstName : "Frederic" };
+var p = { LastName : "Descartes", FirstName : "Frederic" };
 
 for(var propertyName in p) {
 
@@ -191,7 +189,7 @@ public class Program {
 
     static void Main() {
 
-        var p = new { LastName = "Torres", FirstName = "Frederic" };
+        var p = new Person("Descartes", "Frederic");
 
         foreach(var propertyInfo in p.GetType().GetProperties()) {
 
@@ -208,41 +206,84 @@ public class Program {
 //code Inheritance
 /**
 **/
-function Person(lastName, firstName) {
+function Person(lastName) {
 
-    this.LastName  = lastName;
-    this.FirstName = firstName;
+    this.LastName = lastName;
 }
-function Employee(lastName, firstName, company) {
-     
-    Person.call(this, lastName, firstName); // <= Base constructor
+function Employee(lastName, company) {
+    this.LastName = lastName;   
     this.Company = company;
 }
 Employee.prototype = new Person(); // Inheritance
 
-var e = new Employee("Doe", "Joe", "ACompany");
+var e1 = new Employee("Descartes", "Dualism");
+var e2 = new Employee("Pascal"   , "Jansenism");
+print(e1.LastName); print(e2.LastName);
 //C#
 public class Person {
 
     public string LastName { get; set; }
         
     public Person(string lastName) {
+        this.LastName = lastName;
+    }
+    public Person() { } // Parameter less constructor 
+}
+public class Employee : Person {
 
+    public string Company { get; set; }
+    
+    public Employee(string lastName, string company) { // <= Base constructor
+        this.LastName = lastName;
+        this.Company = company;
+    }
+    static void Main() {
+        var e1 = new Employee("Descartes", "Dualism");
+        var e2 = new Employee("Pascal"   , "Jansenism");
+        Console.WriteLine(e1.LastName); Console.WriteLine(e2.LastName);
+    }
+}
+
+//code Inheritance - Base Constructor
+/**
+**/
+function Person(lastName) {
+
+    this.LastName = lastName;
+}
+function Employee(lastName, company) {
+     
+    Person.call(this, lastName); // <= Base constructor
+    this.Company = company;
+}
+Employee.prototype = new Person(); // Inheritance
+
+var e1 = new Employee("Descartes", "Dualism");
+var e2 = new Employee("Pascal"   , "Jansenism");
+print(e1.LastName); print(e2.LastName);
+//C#
+public class Person {
+
+    public string LastName { get; set; }
+        
+    public Person(string lastName) {
         this.LastName = lastName;
     }
 }
 public class Employee : Person {
 
-    public string Company  { get; set; }
+    public string Company { get; set; }
     
-    public Employee(string lastName, string company) 
-            : base(lastName) { // <= Base constructor
+    public Employee(string lastName, string company) : base(lastName) { // <= Base constructor
         this.Company = company;
     }
     static void Main() {
-        var e = new Employee("Doe", "ACompany");     
+        var e1 = new Employee("Descartes", "Dualism");
+        var e2 = new Employee("Pascal"   , "Jansenism");
+        Console.WriteLine(e1.LastName); Console.WriteLine(e2.LastName);
     }
 }
+
 
 //code Private Property
 /**
@@ -261,7 +302,7 @@ function Employee(lastName, firstName, reservedParkingSpot) {
         print(this.LastName + " reservedParkingSpot:" + _reservedParkingSpot);
     }
 }
-var e = new Employee("Torres", "Frederic", true);
+var e = new Employee("Descartes", "Frederic", true);
 e.run();
 //C#
 public class Employee  {
@@ -280,7 +321,7 @@ public class Employee  {
         Console.WriteLine(this.LastName + " reservedParkingSpot:" + _reservedParkingSpot);
     }
     static void Main(){
-        var e = new Employee("Torres", "Frederic", true);
+        var e = new Employee("Descartes", "Frederic", true);
         e.Run();
     }
 }
@@ -338,7 +379,7 @@ Person.create = function(lastName, firstName){ // (X) Static Member
 
     return new Person(lastName, firstName);
 }
-var p = Person.create("Torres", "Frederic");
+var p = Person.create("Descartes", "Frederic");
 //C#
 public class Person{
 
@@ -353,7 +394,7 @@ public class Person{
         return new Person(lastName, firstName);
     }
     static void Main(){
-        var p = Person.Create("Torres", "Frederic");
+        var p = Person.Create("Descartes", "Frederic");
     }
 }
 //code Namespace
@@ -367,7 +408,7 @@ var MyLibrary = {
         this.FirstName = firstName;
     }
 }
-var p = new MyLibrary.Person("Torres", "Frederic");
+var p = new MyLibrary.Person("Descartes", "Frederic");
 //C#
 
 namespace MyLibrary {
@@ -383,7 +424,7 @@ namespace MyLibrary {
 }
 public class Program{
     static void Main(){
-        var p = new MyLibrary.Person("Torres", "Frederic");
+        var p = new MyLibrary.Person("Descartes", "Frederic");
     }
 }
 //code Namespace

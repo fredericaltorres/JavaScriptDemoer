@@ -62,24 +62,52 @@
 -->
   <div id="container">
 
-<h2> .</h2><br/>
-<p><p><center></p>
+<h2> Inheritance</h2><br/>
+<p></p>
+<div class="SmallFontBold">C#</div>
+<pre id="CSharpSourceCode" class="brush:csharp;">
+public class Person {
 
-<p><BR><BR><BR></p>
+    public string LastName { get; set; }
+        
+    public Person(string lastName) {
+        this.LastName = lastName;
+    }
+    public Person() { } // Parameter l constructoress 
+}
+public class Employee : Person {
 
-<p><H1>JavaScript in 30 minutes for C# developers</p>
+    public string Company { get; set; }
+    
+    public Employee(string lastName, string company) { // &lt;= Base constructor
+        this.LastName = lastName;
+        this.Company = company;
+    }
+    static void Main() {
+        var e1 = new Employee("Descartes", "Dualism");
+        var e2 = new Employee("Pascal"   , "Jansenism");
+        Console.WriteLine(e1.LastName); Console.WriteLine(e2.LastName);
+    }
+}
 
-<p><BR /><BR /><BR /></p>
 
-<p>Part II</p>
+</pre>
+<div class="SmallFontBold">JavaScript</div>
+<pre id="JavaScriptSourceCode" class="brush:javascript;">
+function Person(lastName) {
 
-<p><BR /><BR /><BR /></p>
+    this.LastName = lastName;
+}
+function Employee(lastName, company) {
+    this.LastName = lastName;   
+    this.Company = company;
+}
+Employee.prototype = new Person(); // Inheritance
 
-<p>Frederic Torres 2014
-</H1></p>
-
-<p></center></p>
-</p>
+var e1 = new Employee("Descartes", "Dualism");
+var e2 = new Employee("Pascal"   , "Jansenism");
+print(e1.LastName); print(e2.LastName);
+</pre>
 
     </div>
 </body>
