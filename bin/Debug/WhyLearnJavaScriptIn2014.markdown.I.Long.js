@@ -5,14 +5,14 @@
 <br/>
 ![](../javascript-rhino.jpg)
 
-##JavaScript For C# Developers
-###Frederic Torres
+##Frederic Torres
 </center>
+
 **/
 
 //code Why Learn JavaScript in 2014?
 /**
-About the Audience?
+About the Audience? 
 
 * One Important Question
 
@@ -28,6 +28,7 @@ About the Audience?
 <h1>Who hate JavaScript?</h1>
 </center>
 <br/>
+<center>![](../javascript_the_evil_parts_small.png)</center>
 
 **/
 
@@ -52,6 +53,8 @@ About the Audience?
 <center>
 <h1>Who hate JavaScript?
 
+Who do not understand JavaScript?
+
 Who ever read a book about JavaScript the language?
 **/
 
@@ -67,24 +70,22 @@ Who ever read a book about JavaScript the language?
 
     * It was created for beginner
     * Compatibilty reason
-    * Browser wars between Sun, Netscape and Microsoft
-
+    * Browser wars between Sun, Netscape, Microsoft
     * Designed by Committee (TC39, ECMAScript)
 **/
 //code Very short history - The bad part
 /**
-* The language contains some ***dangerous*** and ***stupid*** features
+* The language contains some ***dangerous*** and ***stupid*** features, that were not fixed and will not be fixed
 
-* That are not fixed and will not be fixed
+* It also contains some of most brillant features like ***First class function*** and ***Closure***
 
 **/
-
 //code  Very short history - The good part
 /**
 
-* It is not as bad as it looks
+* ***But*** JavaScript is not as bad as it looks
 
-* JavaScript is really ***misundertsood***
+* it is also ***misundertsood***
 
     * It looks like Java or C#, but is closer to LISP
     
@@ -98,11 +99,8 @@ Who ever read a book about JavaScript the language?
     * Developers say they hate JavaScript, *but what they really hate is the DOM*
 
     * Developers think they know JavaScript without ever having read a book about it
-        * That was my case until 2011<BR/><BR/>
-        
-* Some of most brillant features like ***First class function*** and ***Closure***
-     
-    * Features which have been more or less added to C# 3.5 and above 
+        * That was my case until 2011
+
 **/
 
 //code  Very short history - The good part
@@ -132,6 +130,9 @@ If you want to know more about the history of JavaScript
 ***Douglas Crockford*** is one of the most famous JavaScript evangelist.
 
 * JSON Discoverer/Creator   
+* JSLint: Code Quality Tool
+* Behind YUI Library (Yahoo)
+
 
 **/
 
@@ -146,20 +147,21 @@ If you want to know more about the history of JavaScript
 **/
 //code Why learn JavaScript 2014?
 /**
-* Beyond
+* If all you know is statically compiled programming languages like
 
     * C, Pascal, C++, Java, C#, VB<br/><br/>
 
-* The world of Dynamic Languages:
+* Try the world of Dynamic Languages:
 
-    * Python (Guido van Rossum, Netherlands)
-    * Ruby (Yukihiro Matsumoto, Japan)
-    * JavaScript
+    * Python, Ruby and JavaScript<br/><br/>
 
 <center>
 ## By learning how to program with such languages 
 ## you will become a better C# programmer
 </center>
+
+* Let's review what happens since 2008
+
 
 **/
 //code In 2008
@@ -168,7 +170,12 @@ If you want to know more about the history of JavaScript
 
 
 **/
+//code In 2008
+/**
+* In 2008, **V8** . . . 
 
+
+**/
 //code In 2008 - V8
 /**
 * In 2008 Google released the Chrome browser
@@ -180,31 +187,105 @@ If you want to know more about the history of JavaScript
 * By 2014 all major browsers (FireFox (Ion Monkey), IE9 (Chakra), Safari) have some form of very fast JavaScript engine using JIT and other specific technologies.
 
 **/
-//code Since 2008
+//code 2010 - CoffeeScript
 /**
+<center>![](../CoffeeScript.png)</center>
 
-* 2010 - CoffeeScript and Transcompiler
+* In December 2010, Jeremy Ashkenas, released CoffeeScript 1.0 compiler
 
-    * CoffeeScript is a programming language that **transcompiles** to JavaScript <BR/><BR/>
+* CoffeeScript is a programming language that **transcompiles** to JavaScript
 
-* 2011 - Node.js is a software platform for scalable server-side and networking applications
-    * Extremely successfull
-    * Microsoft has invested on NodeJS for Windows, Azur and Visual Studio<BR/><BR/>
+* The language is inspired by Ruby and Python to enhance JavaScript's brevity and readability and adding additional features
+
+* We have more and more language that transcompiles to javaScript:
+
+    * Dart
+    * Google Web Toolkit (Java -> JavaScript)
+    * ClojureScript
     
-* 2012, Microsoft released TypeScript which add Types to JavaScript.
- 
 **/
-//code Since 2010
+//code 2010 - NodeJS
+/**    
+<center>
+![](../300px-Node.js_logo.svg.png)
+</center>
+
+* Node.js is a software platform for scalable server-side and networking applications.
+
+    * It use JavaScript
+        * Use Google JavaScript engine V8 (extremely fast)
+    * Avaiable on Linux, Windows, MacOS X.
+        * Non-blocking I/O (Asynchrounous programming), Single-threaded<br/><br/>
+
+* Ryan Dahl, released NodeJs 2010/2011
+    
+* Extremely successfull
+
+* Microsoft has invested on NodeJS for Windows, Azur and Visual Studio
+
+**/
+//code 2012 - TypeScript
 /**
-* NoSQL Databases: MongoDB, RavenDB, Azure Mobile Service
+<center>
+![alt text](../TypeScript.png)
+</center>
 
-* PhoneGap: Build HTML5 App for Mobile OS iOS, Android, Windows Phone, Black berry
-    * Adobe/PhoneGag or Telerik AppBuilder provide compiler in the cloud.<BR/><BR/>
+* In 2012, Microsoft release TypeScript which add Types to JavaScript.
 
-* 2012 ASM.JS - Experimental
-    * Asm.js transforms a JavaScript runtime into a Fast Virtual Machine like JVM or .NET Runtime
-        * C++ source --> Compile to LLVM --> Translate to ASM.js --> Fast execution in FireFox
-        * But why? To execute game written in C++ in the browser with minimal rewriting.
+* What is interresting with TypeScript is the way it add Types
+    * Optional
+    * Light
+        * Not used at runtime
+        * Only used at edit time
+            * Catch error
+            * Intellisense
+            * Refactoring tool
+
+**/
+//code NoSQL Databases
+/**
+* ***MongoDB*** (use the Firefox JavaScript Engine, C++) <br/>
+![](../MongoDB.jpg)
+
+* ***RavenDB*** (use the JavaScript engine Jint v 0.9 C# and should used Jint v 2.0 (contributor))<br/>
+![](../ravendb.png)
+
+* ***Azure Mobile Service***<br/>
+![](../MobileServices.jpg)
+
+    * Allow to customize the data getting in and out using JavaScript (NodeJS)
+
+**/
+//code HTML5 + Mobile + PhoneGap
+/**
+![](../PhoneGap.jpg) is a mobile development framework that enables software programmers to build applications for ***mobile devices*** using JavaScript, HTML5, and CSS3.
+<br/>
+
+
+* PhoneGap Build http://phonegap.com
+
+    * iOS, Android, Windows Phone, Black berry and other    s
+
+    * Combined with library like jQuery Mobile, Sencha, Kendo UI.
+
+* Telerik AppBuilder http://www.telerik.com/appbuilder
+
+
+**/
+//code ASM.js
+/**
+What is it ? <br/>
+![](../asm.js.jpg)
+
+* ASM (Assembler Source Language)
+
+* Asm.js is a strict subset of JavaScript that can be used as a low-level, efficient target language for compilers.
+
+    * Asm.js transforms a JavaScript runtime into a Virtual Machine like JVM or .NET Runtime <br/><br/>
+
+* C++ source --> Compile to LLVM --> Translate to ASM.js --> Fast execution in FireFox
+
+* But why? To execute game written in C++ in the browser with minimal rewriting.
  
 **/
 

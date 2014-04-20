@@ -386,8 +386,8 @@ namespace Execution {{
             try {
                 var commandLineParameters = "\"{0}\"".format(GenerateJSFile());
                 e.CommandLine = "nodejs.exe {1}".format(NodeJsExec, commandLineParameters);
-
-                ProcessStartInfo processStartInfo = new ProcessStartInfo("node.exe", commandLineParameters);
+                
+                ProcessStartInfo processStartInfo = new ProcessStartInfo(NodeJsExec, commandLineParameters);
                 processStartInfo.ErrorDialog = false;
                 processStartInfo.UseShellExecute = false;
                 processStartInfo.RedirectStandardError = true;

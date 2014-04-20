@@ -182,7 +182,7 @@ var p = { LastName : "Descartes", FirstName : "Frederic" };
 
 for(var propertyName in p) {
 
-    print(propertyName+" = "+p[propertyName]);
+    print(propertyName + " = " + p[propertyName]);
 }
 //C#
 public class Program {
@@ -193,7 +193,7 @@ public class Program {
 
         foreach(var propertyInfo in p.GetType().GetProperties()) {
 
-            Console.WriteLine(propertyInfo.Name+" = "+propertyInfo.GetValue(p, null).ToString());
+            Console.WriteLine(propertyInfo.Name + " = " +propertyInfo.GetValue(p, null).ToString());
         }
     }
 }
@@ -215,14 +215,17 @@ public class Program {
 ![](../res.PrototypeInheritance.1.png)
 **/
 
+Employee1.LastName;
+
 //code Inheritance
 /**
-
-* Employee1.LastName = "Descartes"; Employee2.LastName = "Pascal"; Employee3.LastName = "Ferrell";
 * All virtual
 
 ![](../res.PrototypeInheritance.2.png)
 **/
+Employee1.LastName = "Descartes"; 
+Employee2.LastName = "Pascal"; 
+Employee3.LastName = "Ferrell";
 
 //code Inheritance
 /**
@@ -351,11 +354,11 @@ public class Employee  {
         this.FirstName            = firstName;
         this._reservedParkingSpot = reservedParkingSpot;
     }
-    public void Run(){
+    public void Run() {
     
-        Console.WriteLine(this.LastName + " reservedParkingSpot:" + _reservedParkingSpot);
+        Console.WriteLine(this.LastName + " reservedParkingSpot:" + this._reservedParkingSpot);
     }
-    static void Main(){
+    static void Main() {
         var e = new Employee("Descartes", "Frederic", true);
         e.Run();
     }
@@ -383,6 +386,7 @@ function outer(name) {
 }
 
 print( outer("Fred")    );
+
 print( outer("Fred")()  );
 
 print( outer("Joe")()   );
@@ -399,7 +403,7 @@ print( outer("Joe")()   );
 
     - But once you get it, ***It will change the way you write code***
 
-<BR/><BR/>
+<BR/>
 **/
 var outer = function(name) {
 
@@ -408,14 +412,12 @@ var outer = function(name) {
         return "Hello " + name;
     }
 }
+print( outer("Fred") );  
 
-print( outer("Fred") );
-// 3 way to invoke a function
-print( outer("Fred")()      );  
+// 3 others way to invoke a function
+print( outer("Fred")() );  
 print( outer("Joe").call()  );
 print( outer("Joe").apply() );
-
-
 
 //code Let's Summarize
 /**
@@ -446,6 +448,8 @@ print( outer("Joe").apply() );
 - .NET Attribute
 
 - Namespace
+    * The lack of Namespace and Module in the language has been a big issue
+        * JavaScript v 6 available in 2015, we should have a concept of module
 
 **/
 
@@ -503,7 +507,7 @@ function TheClass(){
 }
 function GetSuperMethodName(o){
     for(var p in o)
-        if(typeof o[p] === "function") 
+        if(typeof( o[p] ) === "function") 
             if(o[p].SuperMethod === true)   
                 return p;
     return null;
@@ -536,8 +540,9 @@ public class Program {
 
 //code Namespace
 /**
-- Namespace are so important in JavaScript that ...
-- To avoid conflict between classes and methods in web application loading multiple libraries
+- Lack of Namespace is a real problem to avoid conflict 
+- Module JavaScript 6
+
 **/
 var MyLibrary = {
     Person : function (lastName, firstName){
@@ -549,7 +554,7 @@ var p = new MyLibrary.Person("Descartes", "Frederic");
 //C#
 
 namespace MyLibrary {
-    public class Person{
+    public class Person {
         public string LastName  { get; set; }
         public string FirstName { get; set; }
 
@@ -559,8 +564,8 @@ namespace MyLibrary {
         }
     }
 }
-public class Program{
-    static void Main(){
+public class Program {
+    static void Main() {
         var p = new MyLibrary.Person("Descartes", "Frederic");
     }
 }
@@ -574,42 +579,74 @@ public class Program{
 **/
 
 
-
 //code Let's Summarize
 /**
    
-- With all we learned so far, we were able to create the concepts of
+* We were able to create the concepts of
 
     - Static member
     - Namespace
-    - .NET Attributes 
-    - Enum Type with Object Literal (Which we did not see)
-    <BR /><BR />
-
-- JavaScript as language feature also support
+    - .NET Attributes<BR /><BR />
+    
+- It also possible to implement
+    
+    - Enum Type (Object Literal)
+    - Extension Methods<BR /><BR />
 
     - Optional Parameters
 
-    - Extension Methods
+* What's the conclusion?
 
-- What's the conclusion?    
+**/
+
+//code Conclusion
+/**
+* JavaScript is programming language that was never given the time to mature
+
+* It carry a lot of really bad features or spec details
+
+    * The web site www.wtfjs.com
+    * <a href="http://frederictorres.blogspot.com/2014/01/javascript-makes-me-cry.html">string.LastIndex(), javascript makes me cry</a>
+
+<BR/>
+
+**/
+print(Math.max(-1, false));   // <= 0
+
+print(['1', '2', '3'].map( parseInt )); // <= [ 1, NaN, NaN ]
+
+//code Conclusion
+/**
+
+But with
+
+* First Class Function
+* Closure
+* Object Literal
+* Dynamic Language aspect
+
+* It is amazing how much you can do
+
+* it still worth spending time understanding
+
+* Read this book ![](../JavaScriptTheGoodParts.jpg)
 
 **/
 
 
 //code Data Structures
 /**
+<center><H1>Data Structures</H1></center>
 **/
 
-
-//code JavaScript Object vs D...
+//code JavaScript Object vs Dictionary
 /**
 What is this ?
 
 **/
 var trace = {
 
-    On:true
+    On: true
 }
 
 //code JavaScript Object vs Dictionary<K,V>
@@ -619,7 +656,7 @@ What is this ?
 **/
 var trace = {
 
-    On:true
+    On: true
 }
 
 //code JavaScript Object vs Dictionary<K,V>
@@ -632,18 +669,18 @@ trace["Debug"]  = true;
 trace["Trace"]  = "warning";
 trace.TraceSize = 1000;
 
-for(var key in trace){
+for(var key in trace) {
     print(key + " = " + trace[key]);
 }
 
 //C#
-var trace = new Dictionary<string,object>();
+var trace = new Dictionary<string, object>();
 
 trace["Debug"]     = true;
 trace["Trace"]     = "warning";
 trace["TraceSize"] = 1000;
 
-foreach(var e in trace){
+foreach(var e in trace) {
     Console.WriteLine(e.Key + " = " + e.Value.ToString());
 }
 
@@ -842,7 +879,7 @@ funnyPeopleInHighSchool.forEach(function(p){
 });
 //C#
 public class Program {    
-    static void Main(){
+    static void Main() {
         var annoyingPeopleInHighSchool = new List<Person>() {
             new Person("Descartes", "Rene"        ),
             new Person("Pascal"   , "Baise"       ),

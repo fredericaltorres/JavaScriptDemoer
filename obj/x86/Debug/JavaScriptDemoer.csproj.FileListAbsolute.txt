@@ -25,9 +25,9 @@ C:\talk\JavaScriptDemoer\JavaScriptDemoer\bin\Debug\Node\jquery.mobile\images\ic
 C:\talk\JavaScriptDemoer\JavaScriptDemoer\bin\Debug\Node\jquery.mobile\jquery.mobile-1.0rc1.min.css
 C:\talk\JavaScriptDemoer\JavaScriptDemoer\bin\Debug\Node\jquery.mobile\jquery.mobile-1.0rc1.min.js
 C:\talk\JavaScriptDemoer\JavaScriptDemoer\bin\Debug\Node\jQuery\jQuery.1.6.4.js
+D:\DVT\JavaScriptDemoer\bin\Debug\Node\node.exe
 D:\DVT\JavaScriptDemoer\bin\Debug\Node\jQuery\styles.css
 D:\DVT\JavaScriptDemoer\bin\Debug\Node\jQuery\jQuery.1.6.4.js
-D:\DVT\JavaScriptDemoer\bin\Debug\Node\node.exe
 D:\DVT\JavaScriptDemoer\bin\Debug\Node\SyntaxHighlighter\shBrushCSharp.js
 D:\DVT\JavaScriptDemoer\bin\Debug\Node\SyntaxHighlighter\shBrushJScript.js
 D:\DVT\JavaScriptDemoer\bin\Debug\Node\SyntaxHighlighter\shBrushPython.js

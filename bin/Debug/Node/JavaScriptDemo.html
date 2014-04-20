@@ -62,54 +62,19 @@
 -->
   <div id="container">
 
-<h2> .NET Attribute vs Function Property</h2><br/>
-<p></p>
-<div class="SmallFontBold">C#</div>
-<pre id="CSharpSourceCode" class="brush:csharp;">
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-public class SuperMethodAttribute : System.Attribute {
-}        
-public class TheClass {    
-    [SuperMethod]
-    public void Run(){
-    }
-}       
-public class Program {    
-    public static string GetSuperMethodName(object o) {
-        foreach (var mi in o.GetType().GetMembers())
-            foreach (object attribute in mi.GetCustomAttributes(true))
-                if (attribute is SuperMethodAttribute)
-                    return mi.Name;
-        return null;
-    }
-    static void Main() {
-        var theClass = new TheClass();
-        Console.WriteLine("The SuperMethod is " + GetSuperMethodName(theClass));
-    }
-}
+<h2> Conclusion</h2><br/>
+<p><p>But with</p>
 
-
-
-</pre>
-<div class="SmallFontBold">JavaScript</div>
-<pre id="JavaScriptSourceCode" class="brush:javascript;">
-function TheClass(){
-
-    this.run = function() {
-
-    }
-    this.run.SuperMethod = true;
-}
-function GetSuperMethodName(o){
-    for(var p in o)
-        if(typeof o[p] === "function") 
-            if(o[p].SuperMethod === true)   
-                return p;
-    return null;
-}
-var theClass = new TheClass();
-print("The SuperMethod is " + GetSuperMethodName(theClass));
-</pre>
+<ul>
+<li>First Class Function</li>
+<li>Closure</li>
+<li>Object Literal</li>
+<li><p>Dynamic Language aspect</p></li>
+<li><p>It is amazing how much you can do</p></li>
+<li><p>it still worth spending time understanding</p></li>
+<li><p>Read this book <img src="../JavaScriptTheGoodParts.jpg" alt="" /></p></li>
+</ul>
+</p>
 
     </div>
 </body>
