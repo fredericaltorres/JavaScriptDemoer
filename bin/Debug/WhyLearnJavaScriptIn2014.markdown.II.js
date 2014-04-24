@@ -5,7 +5,7 @@
 
 ![](../javascript-rhino.jpg)
 
-Frederic Descartes 2014
+Frederic Torres 2014
 </H1>
 </center>
 **/

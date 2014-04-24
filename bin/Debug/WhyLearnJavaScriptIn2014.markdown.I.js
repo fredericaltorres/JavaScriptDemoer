@@ -35,19 +35,6 @@ About the Audience?
 /**
 About the Audience?
 
-<center>
-<br/>
-<center>
-<h1>Who hate JavaScript?
-
-Who do not understand JavaScript?
-
-**/
-
-//code Why Learn JavaScript in 2014?
-/**
-About the Audience?
-
 <br/>
 <center>
 <h1>Who hate JavaScript?
@@ -98,7 +85,7 @@ Who ever read a book about JavaScript the language?
     * Developers say they hate JavaScript, *but what they really hate is the DOM*
 
     * Developers think they know JavaScript without ever having read a book about it
-        * That was my case until 2011<BR/><BR/>
+        * That was my case until 2010 <BR/><BR/>
         
 * Some of most brillant features like ***First class function*** and ***Closure***
      
@@ -137,7 +124,7 @@ If you want to know more about the history of JavaScript
 
 //code Why learn JavaScript 2014?
 /**
-* It is not just for the Web anymore
+* It is not just for the Web browser anymore
 
 * Can be extremely fast 
 
@@ -187,7 +174,11 @@ If you want to know more about the history of JavaScript
 
     * CoffeeScript is a programming language that **transcompiles** to JavaScript <BR/><BR/>
 
-* 2011 - Node.js is a software platform for scalable server-side and networking applications
+* 2011 - Node.js is a software platform to execute scalable server-side and networking applications
+    * Web service and Web site
+    * Use JavaScript Engine V8 (Very fast)
+    * Non blocking IO architecture
+    * Windows, MacOS, Linux
     * Extremely successfull
     * Microsoft has invested on NodeJS for Windows, Azur and Visual Studio<BR/><BR/>
     
@@ -199,7 +190,7 @@ If you want to know more about the history of JavaScript
 * NoSQL Databases: MongoDB, RavenDB, Azure Mobile Service
 
 * PhoneGap: Build HTML5 App for Mobile OS iOS, Android, Windows Phone, Black berry
-    * Adobe/PhoneGag or Telerik AppBuilder provide compiler in the cloud.<BR/><BR/>
+    * Adobe/PhoneGap or Telerik AppBuilder provide compiler in the cloud.<BR/><BR/>
 
 * 2012 ASM.JS - Experimental
     * Asm.js transforms a JavaScript runtime into a Fast Virtual Machine like JVM or .NET Runtime
