@@ -189,7 +189,7 @@ public class Program {
 
     static void Main() {
 
-        var p = new Person("Descartes", "Frederic");
+        var p = new Person("Descartes", "Rene");
 
         foreach(var propertyInfo in p.GetType().GetProperties()) {
 
@@ -460,7 +460,7 @@ print( outer("Joe").apply() );
     1. A function is an object
     2. You can store a function in a variable
     3. A function can have properties (including of type function)
-    4. You can pass the function as a parameter to another function
+    4. You can pass a function as a parameter to another function
     5. You can return a function from a function
 **/
 //code Static Member
@@ -545,7 +545,7 @@ public class Program {
 
 **/
 var MyLibrary = {
-    Person : function (lastName, firstName){
+    Person : function (lastName, firstName) {
         this.LastName  = lastName;
         this.FirstName = firstName;
     }
@@ -558,7 +558,7 @@ namespace MyLibrary {
         public string LastName  { get; set; }
         public string FirstName { get; set; }
 
-        public Person(string lastName, string firstName){
+        public Person(string lastName, string firstName) {
             this.LastName  = lastName;
             this.FirstName = firstName;
         }
